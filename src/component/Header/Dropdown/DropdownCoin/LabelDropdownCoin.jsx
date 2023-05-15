@@ -1,10 +1,15 @@
 import React from "react";
 
 const LabelDropdownCoin = (props) => {
-  const { content } = props;
+  const { content, handleSetContentDrop } = props;
   return (
     <div>
-      <p className="flex content-drop-coin">{content}</p>
+      <p
+        className="flex content-drop-coin"
+        onClick={() => handleSetContentDrop(content)}
+      >
+        {content}
+      </p>
     </div>
   );
 };

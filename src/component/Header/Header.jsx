@@ -1,14 +1,11 @@
 import React from "react";
 import { SlackOutlined } from "@ant-design/icons";
-import { Input } from "antd";
 import "./Header.css";
 
 import DropdownLanguage from "./Dropdown/DropdownLanguage/DropdownLanguage";
 import DropdownCoin from "./Dropdown/DropdownCoin/DropdownCoin";
-
-const { Search } = Input;
-
-const onSearch = (value) => console.log(value);
+import SearchHeader from "./Search/SearchHeader";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -23,13 +20,7 @@ const Header = () => {
               <span className="name-company text-orange-400">SlackOut</span>
             </div>
             <div className="header-search">
-              <Search
-                placeholder="Tìm theo điểm đến, hoạt động"
-                onSearch={onSearch}
-                style={{
-                  width: 250,
-                }}
-              />
+              <SearchHeader />
             </div>
           </div>
 
@@ -43,7 +34,9 @@ const Header = () => {
               </li>
               <li className="header-open-app">Mở ứng dụng</li>
               <li className="header-help">Trợ giúp</li>
-              <li className="header-btn-register">Đăng ký</li>
+              <li className="header-btn-register">
+                <NavLink to={"/register"}>Đăng ký</NavLink>
+              </li>
               <li className="header-btn-login ">Đăng nhập</li>
             </ul>
           </div>
