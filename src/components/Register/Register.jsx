@@ -23,11 +23,16 @@ const Register = () => {
 
         <input {...register("email")} placeholder="Email" />
 
-        <input {...register("password")} placeholder="Mật khẩu" />
+        <input
+          {...register("password")}
+          placeholder="Mật khẩu"
+          type="password"
+        />
 
         <input
           {...register("confirmPassword")}
           placeholder="Xác nhận mật khẩu"
+          type="password"
         />
 
         <input
@@ -48,7 +53,10 @@ const Register = () => {
           <input type="checkbox" />
           <h6>Chấp nhận điều khoản sử dụng</h6>
         </div>
-        <input type="submit" value="Đăng ký" />
+
+        <div className="btn">
+          <input type="submit" value="Đăng ký" className="btn-register" />
+        </div>
       </form>
     </div>
   );

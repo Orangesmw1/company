@@ -17,7 +17,9 @@ const Header = () => {
               <span className="logo">
                 <SlackOutlined className="text-red-500" />
               </span>
-              <span className="name-company text-orange-400">SlackOut</span>
+              <span className="name-company text-orange-400">
+                <NavLink to={"/"}>Vietnamtraveling</NavLink>
+              </span>
             </div>
             <div className="header-search">
               <SearchHeader />
