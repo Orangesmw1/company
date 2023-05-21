@@ -223,3 +223,39 @@
     font-weight: 600;
     color: rgb(239 68 68);
   }
+
+  .register .form-password {
+    position: relative;
+}
+
+.register .form-password .anticon.anticon-eye-invisible {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.register .form-password .anticon.anticon-eye {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.register .form-password-confirm {
+  position: relative;
+}
+
+.register .form-password-confirm .anticon.anticon-eye-invisible {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.register .form-password-confirm .anticon.anticon-eye {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}

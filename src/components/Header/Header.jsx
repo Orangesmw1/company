@@ -39,7 +39,9 @@ const Header = () => {
               <li className="header-btn-register">
                 <NavLink to={"/register"}>Đăng ký</NavLink>
               </li>
-              <li className="header-btn-login ">Đăng nhập</li>
+              <li className="header-btn-login ">
+                <NavLink to={"/login"}>Đăng nhập</NavLink>
+              </li>
             </ul>
           </div>
         </header>

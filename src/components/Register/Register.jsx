@@ -1,12 +1,37 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import "./Register.css";
+import { EyeInvisibleOutlined, EyeOutlined } from "@ant-design/icons";
 
 const Register = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
 
   const [typeDate, setTypeDate] = useState("text");
+  const [isShowPass, setIsShowPass] = useState(false);
+  const [typePass, setTypePass] = useState("password");
+  const [isShowPassConfirm, setIsShowPassConfirm] = useState(false);
+  const [typePassConfirm, setTypePassConfirm] = useState("password");
+
+  const handleShowPass = (isShowPass) => {
+    if (isShowPass) {
+      setTypePass("text");
+      setIsShowPass(true);
+    } else {
+      setTypePass("password");
+      setIsShowPass(false);
+    }
+  };
+
+  const handleShowPassConfirm = (isShowPassConfirm) => {
+    if (isShowPassConfirm) {
+      setTypePassConfirm("text");
+      setIsShowPassConfirm(true);
+    } else {
+      setTypePassConfirm("password");
+      setIsShowPassConfirm(false);
+    }
+  };
 
   const handleSetType = () => {
     setTypeDate("date");
@@ -23,17 +48,33 @@ const Register = () => {
 
         <input {...register("email")} placeholder="Email" />
 
-        <input
-          {...register("password")}
-          placeholder="Mật khẩu"
-          type="password"
-        />
+        <div className="form-password">
+          <input
+            {...register("password")}
+            placeholder="Mật khẩu"
+            type={typePass}
+          />
 
-        <input
-          {...register("confirmPassword")}
-          placeholder="Xác nhận mật khẩu"
-          type="password"
-        />
+          {!isShowPass ? (
+            <EyeInvisibleOutlined onClick={() => handleShowPass(true)} />
+          ) : (
+            <EyeOutlined onClick={() => handleShowPass(false)} />
+          )}
+        </div>
+
+        <div className="form-password-confirm">
+          <input
+            {...register("confirmPassword")}
+            placeholder="Xác nhận mật khẩu"
+            type={typePassConfirm}
+          />
+
+          {!isShowPassConfirm ? (
+            <EyeInvisibleOutlined onClick={() => handleShowPassConfirm(true)} />
+          ) : (
+            <EyeOutlined onClick={() => handleShowPassConfirm(false)} />
+          )}
+        </div>
 
         <input
           {...register("dateOfBirth")}
