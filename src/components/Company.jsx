@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Header from "./Header/Header";
-import axios from "axios";
 
 const Company = ({ children }) => {
   // useEffect(() => {

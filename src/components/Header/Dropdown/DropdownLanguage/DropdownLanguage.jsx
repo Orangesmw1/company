@@ -2,53 +2,51 @@ import React, { useState } from "react";
 import logoVN from "../../../../image/Ensign/vietnam.svg";
 import logoUS from "../../../../image/Ensign/US.svg";
 import LabelDropdownLanguage from "./LabelDropdownLanguage";
-import { Dropdown } from "antd";
+import { Popover } from "antd";
 
 const DropdownLanguage = () => {
+  const [open, setOpen] = useState(false);
   const [logo, setLogo] = useState(logoVN);
+  const [nameLanguage, setNameLanguage] = useState("Việt Nam");
+
+  const handleOpenChange = (newOpen) => {
+    setOpen(newOpen);
+  };
+
+  const hide = () => {
+    setOpen(false);
+  };
 
   const handleSetLanguage = (name) => {
-    if (name === "Vietnam") {
+    if (name === "vietnam") {
       setLogo(logoVN);
+      setNameLanguage("Việt Nam");
+      hide();
     } else {
       setLogo(logoUS);
+      setNameLanguage("US");
+      hide();
     }
   };
 
-  const items = [
-    {
-      label: (
-        <LabelDropdownLanguage
-          handleSetLanguage={handleSetLanguage}
-          logo={logoVN}
-          name={"Vietnam"}
-        />
-      ),
-      key: "0",
-    },
-    {
-      label: (
-        <LabelDropdownLanguage
-          handleSetLanguage={handleSetLanguage}
-          logo={logoUS}
-          name={"US"}
-        />
-      ),
-      key: "1",
-    },
-  ];
-
   return (
-    <Dropdown
-      menu={{
-        items,
-      }}
-      trigger={["hover"]}
+    <Popover
+      content={
+        <LabelDropdownLanguage
+          logoVN={logoVN}
+          logoUS={logoUS}
+          handleSetLanguage={handleSetLanguage}
+        />
+      }
+      trigger="click"
+      open={open}
+      onOpenChange={handleOpenChange}
     >
-      <a onClick={(e) => e.preventDefault()}>
+      <p className="flex items-center content-drop-language">
         <img src={logo} alt="" />
-      </a>
-    </Dropdown>
+        <span>{nameLanguage}</span>
+      </p>
+    </Popover>
   );
 };
 

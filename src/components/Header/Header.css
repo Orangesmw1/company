@@ -121,6 +121,9 @@ header {
     height: 100%;
 }
 
+.content-drop-language:hover {
+    cursor: pointer;
+}
 
 .content-drop-language img {
     width: 20px !important;

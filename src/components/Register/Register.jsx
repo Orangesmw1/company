@@ -77,6 +77,12 @@ const Register = () => {
         </div>
 
         <input
+          {...register("phoneNumber")}
+          placeholder="Số điện thoại"
+          id="text"
+        />
+
+        <input
           {...register("dateOfBirth")}
           placeholder="Ngày sinh"
           id="date"

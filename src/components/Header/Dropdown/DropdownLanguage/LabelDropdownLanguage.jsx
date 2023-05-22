@@ -1,16 +1,21 @@
 import React from "react";
 
-const LabelDropdownLanguage = (props) => {
-  const { logo, name, handleSetLanguage } = props;
+const LabelDropdownLanguage = ({ logoVN, logoUS, handleSetLanguage }) => {
   return (
-    <div>
-      <p
-        className="flex content-drop-language"
-        onClick={() => handleSetLanguage(name)}
-      >
-        <img src={logo} alt="" />
-        <span>{name}</span>
-      </p>
+    <div className="">
+      <div onClick={() => handleSetLanguage("vietnam")}>
+        <p className="flex content-drop-language">
+          <img src={logoVN} alt="" />
+          <span>Việt Nam</span>
+        </p>
+      </div>
+      <br />
+      <div onClick={() => handleSetLanguage("us")}>
+        <p className="flex content-drop-language">
+          <img src={logoUS} alt="" />
+          <span>US</span>
+        </p>
+      </div>
     </div>
   );
 };

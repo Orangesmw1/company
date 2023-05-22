@@ -1,9 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Company from "./components/Company";
-import HomePage from "./components/HomePage/HomePage";
 import Register from "./components/Register/Register";
 import Login from "./components/Login/Login";
+import DetailDestinations from "./components/DetailDestinations/DetailDestinations";
+import HomePage from "./Pages/HomePage/HomePage";
 
 function App() {
   return (
@@ -32,6 +33,16 @@ function App() {
             element={
               <Company>
                 <Login />
+              </Company>
+            }
+          />
+
+          {/* DETAIL DESTINATIONS  */}
+          <Route
+            path="/detaildestinations/:id"
+            element={
+              <Company>
+                <DetailDestinations />
               </Company>
             }
           />
