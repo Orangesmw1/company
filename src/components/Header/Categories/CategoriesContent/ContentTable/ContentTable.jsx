@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./ContentTable.css";
 import { Tabs } from "antd";
 import LabelContent from "./LabelContent/LabelContent";

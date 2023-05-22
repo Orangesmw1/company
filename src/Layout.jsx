@@ -1,7 +1,8 @@
 import React from "react";
-import Header from "./Header/Header";
+import Header from "./components/Header/Header";
+import { Outlet } from "react-router-dom";
 
-const Company = ({ children }) => {
+const Company = () => {
   // useEffect(() => {
   //   const callApi = async () => {
   //     const res = await axios.get("http://localhost:8000/v1/user/");
@@ -15,7 +16,7 @@ const Company = ({ children }) => {
   return (
     <div className="font-serif">
       <Header />
-      {children}
+      <Outlet />
     </div>
   );
 };
